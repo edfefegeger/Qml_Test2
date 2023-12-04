@@ -2,7 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
-
+import QtMultimedia 5.15
 ApplicationWindow {
     maximumWidth: 641
     minimumWidth: 641
@@ -23,7 +23,8 @@ ApplicationWindow {
 
         GridLayout {
             id: grid
-            columns: 3
+            columns: 4
+
 
             Rectangle {
                 Layout.minimumWidth: 450
@@ -54,6 +55,9 @@ ApplicationWindow {
 
                     GridLayout {
                         columns: 4
+                        rowSpacing: 20
+
+                        Layout.fillWidth: true
 
                         Rectangle {
                             id: elem
@@ -80,7 +84,7 @@ ApplicationWindow {
                             visible: true
                             width: 100
                             height: 100
-                            anchors.left: elem.right
+//                            anchors.left: elem.right
                             radius: 20
 
 
@@ -117,7 +121,7 @@ ApplicationWindow {
                             visible: true
                             width: 100
                             height: 100
-                            anchors.left: elem2.right
+//                            anchors.left: elem2.right
                             radius: 20
 
                             Text {
@@ -138,6 +142,7 @@ ApplicationWindow {
                             width: 100
                             height: 100
                             radius: 20
+//                            anchors.right: butt.left
                             color: "blue"
                             border {
                                 width: 2
@@ -151,13 +156,54 @@ ApplicationWindow {
                                 source: "https://upload.wikimedia.org/wikipedia/ru/archive/6/6b/20210505175821%21NyanCat.gif"
                             }
                         }
+                        Rectangle {
+                            id: elem44
+                            visible: true
+                            width: 100
+                            height: 100
+                            radius: 20
+                            color: "blue"
+//                            anchors.left: elem3.right
+                            border {
+                                width: 2
+                            }
+                            AnimatedImage{
+                                id: gif3
+
+                                width: 90
+                                height: 90
+                                anchors.centerIn: parent
+                                source: "https://upload.wikimedia.org/wikipedia/ru/archive/6/6b/20210505175821%21NyanCat.gif"
+                            }
+                        }
+                        Rectangle {
+                            id: elem444
+                            visible: true
+                            width: 100
+                            height: 100
+                            radius: 20
+                            color: "blue"
+//                            anchors.top: elem4.bottom
+                            border {
+                                width: 2
+                            }
+                            AnimatedImage{
+                                id: gif4
+                                anchors.centerIn: parent
+                                width: 90
+                                height: 90
+
+                                source: "https://upload.wikimedia.org/wikipedia/ru/archive/6/6b/20210505175821%21NyanCat.gif"
+                            }
+                        }
+
 
                         Rectangle {
                             id: elem5
                             visible: true
                             width: 100
                             height: 100
-                            anchors.left: elem.right
+//                            anchors.left: elem.right
                             radius: 20
 
 
@@ -183,18 +229,71 @@ ApplicationWindow {
 //                                    }
 
                             }
+                            Rectangle {
+                                id: elem11111
+                                visible: true
+                                width: 100
+                                height: 100
+                                radius: 20
+                                color: "blue"
+                                border {
+                                    width: 2
+                                }
+                                AnimatedImage{
+                                    id: gif11111
+                                    anchors.centerIn: elem11111
+                                    width: 90
+                                    height: 90
 
-                            border {
-                                width: 2
+                                    source: "https://upload.wikimedia.org/wikipedia/ru/archive/6/6b/20210505175821%21NyanCat.gif"
+                                }
                             }
-                        }
+
+                            Rectangle {
+                                id: elem22222
+                                visible: true
+                                width: 100
+                                height: 100
+    //                            anchors.left: elem.right
+                                radius: 20
+
+
+                                Button {
+                                    id: butt11111
+                                    anchors.centerIn: parent
+                                    text: "button"
+                                    width: 75
+                                    height: 25
+
+                                    onClicked: {
+                                        elem22222.color = "red"
+                                    }
+                                    onDoubleClicked: {
+                                        elem11111.color = "orange"
+                                    }
+    //                                onPressAndHold:
+    //                                    Image {
+    //                                        id: name4
+    //                                        fillMode: Image.TileVertically
+    //                                        source: "https://static.life.ru/publications/2023/9/11/812587366614.6013.jpg"
+    //                                        anchors.fill: elem
+    //                                    }
+
+                                }
+
+                                border {
+                                    width: 2
+                                }
+                            }
+                    }
+
 
                         Rectangle {
                             id: elem6
                             visible: true
                             width: 100
                             height: 100
-                            anchors.left: elem2.right
+//                            anchors.left: elem2.right
                             radius: 20
 
                             Text {
@@ -204,13 +303,97 @@ ApplicationWindow {
                                 anchors.centerIn: parent
                                 color: "red"
                             }
+                        }
 
-                            border {
-                                width: 2
+                            Rectangle {
+                                id: elem111111
+                                visible: true
+                                width: 100
+                                height: 100
+                                radius: 20
+                                color: "blue"
+                                border {
+                                    width: 2
+                                }
+                                AnimatedImage{
+                                    id: gif111111
+                                    anchors.centerIn: elem111111
+                                    width: 90
+                                    height: 90
+
+                                    source: "https://media.tenor.com/97sD3prHJcoAAAAC/funny-memes.gif"
+                                }
                             }
-                        }
-                        }
-                    }
+                            Rectangle {
+                                id: elem1111111
+                                visible: true
+                                width: 100
+                                height: 100
+                                radius: 20
+                                color: "blue"
+                                border {
+                                    width: 2
+                                }
+                                AnimatedImage{
+                                    id: gif1111111
+                                    anchors.centerIn: elem1111111
+                                    width: 90
+                                    height: 90
+
+                                    source: "https://www.icegif.com/wp-content/uploads/2022/01/icegif-962.gif"
+                                }
+                            }
+                            Rectangle {
+                                id: elem11111111
+                                visible: true
+                                width: 100
+                                height: 100
+                                radius: 20
+                                color: "blue"
+                                border {
+                                    width: 2
+                                }
+                                AnimatedImage{
+                                    id: gif11111111
+                                    anchors.centerIn: elem11111111
+                                    width: 90
+                                    height: 90
+
+                                    source: "https://www.icegif.com/wp-content/uploads/icegif-1614.gif"
+                                }
+                            }
+                            Rectangle {
+                                id: audio
+                                visible: true
+                                width: 100
+                                height: 100
+                                radius: 20
+                                color: "blue"
+                                border {
+                                    width: 2
+                                }
+                                Text {
+                                    text: "Click Me!";
+                                    font.pointSize: 24;
+                                    width: 150; height: 50;
+
+                                    Audio {
+                                        id: playMusic
+                                        source: "music.wav"
+                                    }
+                                    MouseArea {
+                                        id: playArea
+                                        anchors.fill: parent
+                                        onPressed:  { playMusic.play() }
+                                    }
+                                }
+                            }
+
+
+
+}
+
+
 
                 Rectangle {
                     visible: true
@@ -268,6 +451,9 @@ ApplicationWindow {
                 }
             }
         }
-    }
 }
+}
+}
+
+
 
