@@ -56,6 +56,7 @@ ApplicationWindow {
                     radius: 10
 
                     GridLayout {
+                        id: own_grid
                         columns: 4
                         rowSpacing: 20
 
@@ -430,22 +431,27 @@ ApplicationWindow {
                                 width: 3
                             }
 
+
                             radius: 10
+
                             Button {
                                 id: delete_rand_butt
                                 anchors.fill: parent
                                 text: "<font color=\"black\">Удалить случайный объект</font>"
-                                font.pointSize:10.5
+                                font.pointSize: 10.5
 
                                 onClicked: {
-                                    elem22222.color = "red"
-                                }
-                                onDoubleClicked: {
-                                    elem111111.color = "orange"
-                                }
+                                       var ids = [elem, elem2, elem3, elem4, elem44, elem444, elem5, elem11111,elem22222, elem6,elem111111, elem1111111, elem11111111, audio ]
+                                       var randomIndex = Math.floor(Math.random() * (ids.length));
+                                       var result = ids[randomIndex];
+                                       result.visible = false;
+                                    }
 
+                                }
                             }
-                        }
+
+
+
 
                         Rectangle {
                             id: rec2
@@ -472,6 +478,7 @@ ApplicationWindow {
                         }
 
                         Rectangle {
+
                             id: rec3
                             visible: true
                             width: 188
@@ -481,18 +488,24 @@ ApplicationWindow {
                                 width: 3
                             }
                             radius: 10
+
                             Button {
                                 id: delete_butt_last
                                 anchors.fill: parent
                                 text: "<font color=\"black\">Удалить последний</font>"
                                 font.pointSize:10.5
-
+                                 property var ids: [elem, elem2, elem3, elem4, elem44, elem444, elem5, elem11111, elem22222, elem6, elem111111, elem1111111, elem11111111, audio];
                                 onClicked: {
-                                    audio.visible = false;
+                                    if (ids.length > 0) {
+                                        var last = ids[ids.length - 1];
+                                        ids.pop();
+                                        last.visible = false;
+                                    }
                                 }
 
-
                             }
+
+                        }
                         }
                     }
                     }
@@ -500,5 +513,5 @@ ApplicationWindow {
             }
         }
 }
-}
+
 
