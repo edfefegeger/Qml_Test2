@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/prefix1">
+        <file>pukane-4.wav</file>
+    </qresource>
+</RCC>

@@ -2,7 +2,9 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
-import QtMultimedia 5.15
+
+import QtQuick3D.SpatialAudio
+import QtMultimedia
 ApplicationWindow {
     maximumWidth: 641
     minimumWidth: 641
@@ -372,15 +374,23 @@ ApplicationWindow {
                                 border {
                                     width: 2
                                 }
-                                Text {
-                                    text: "Click Me!";
-                                    font.pointSize: 24;
-                                    width: 150; height: 50;
+                                AnimatedImage{
+                                    id: gif111111111
+                                    anchors.centerIn: parent
+                                    width: 90
+                                    height: 90
 
-                                    Audio {
+                                    source: "https://media.tenor.com/-3cgbsl4ncIAAAAd/%D1%8B%D0%B0%D1%8B%D0%B0%D1%8B.gif"
+                                }
+
+                                    SoundEffect {
                                         id: playMusic
-                                        source: "music.wav"
+                                        source: "file:///C:/Users/Super PC/Documents/untitled5/pukane-4.wav"
                                     }
+
+
+
+
                                     MouseArea {
                                         id: playArea
                                         anchors.fill: parent
@@ -421,6 +431,20 @@ ApplicationWindow {
                             }
 
                             radius: 10
+                            Button {
+                                id: delete_rand_butt
+                                anchors.fill: parent
+                                text: "<font color=\"black\">Удалить случайный объект</font>"
+                                font.pointSize:10.5
+
+                                onClicked: {
+                                    elem22222.color = "red"
+                                }
+                                onDoubleClicked: {
+                                    elem111111.color = "orange"
+                                }
+
+                            }
                         }
 
                         Rectangle {
@@ -433,6 +457,18 @@ ApplicationWindow {
                                 width: 3
                             }
                             radius: 10
+                            Button {
+                                id: delete_butt
+                                anchors.fill: parent
+                                text: "<font color=\"black\">Удалить пердеж</font>"
+                                font.pointSize:10.5
+
+                                onClicked: {
+                                    audio.visible = false;
+                                }
+
+
+                            }
                         }
 
                         Rectangle {
@@ -445,6 +481,18 @@ ApplicationWindow {
                                 width: 3
                             }
                             radius: 10
+                            Button {
+                                id: delete_butt_last
+                                anchors.fill: parent
+                                text: "<font color=\"black\">Удалить последний</font>"
+                                font.pointSize:10.5
+
+                                onClicked: {
+                                    audio.visible = false;
+                                }
+
+
+                            }
                         }
                     }
                     }
@@ -453,7 +501,4 @@ ApplicationWindow {
         }
 }
 }
-}
-
-
 
